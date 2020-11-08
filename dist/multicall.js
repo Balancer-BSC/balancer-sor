@@ -46,13 +46,13 @@ var __importStar =
         return result;
     };
 Object.defineProperty(exports, '__esModule', { value: true });
-const ethers_1 = require('ethers');
+const contracts_1 = require('@ethersproject/contracts');
 const bmath = __importStar(require('./bmath'));
 function getAllPoolDataOnChain(pools, multiAddress, provider) {
     return __awaiter(this, void 0, void 0, function*() {
         if (pools.pools.length === 0) throw Error('There are no pools.');
         const customMultiAbi = require('./abi/customMulticall.json');
-        const contract = new ethers_1.Contract(
+        const contract = new contracts_1.Contract(
             multiAddress,
             customMultiAbi,
             provider

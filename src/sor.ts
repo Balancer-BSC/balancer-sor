@@ -18,10 +18,10 @@ import {
     PoolDictionary,
     Pool,
 } from './types';
-import { ethers } from 'ethers';
+import { MaxUint256 } from '@ethersproject/constants';
 
 // TODO give the option to choose a % of slippage beyond current price?
-export const MAX_UINT = ethers.constants.MaxUint256;
+export const MAX_UINT = MaxUint256;
 
 const minAmountOut = 0;
 const maxAmountIn = MAX_UINT;

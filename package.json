@@ -43,6 +43,7 @@
         "@ethersproject/contracts": "^5.0.5",
         "@ethersproject/providers": "^5.0.14",
         "@ethersproject/solidity": "^5.0.5",
+        "@ethersproject/units": "^5.0.6",
         "bignumber.js": "^9.0.0",
         "isomorphic-fetch": "^2.2.1"
     }

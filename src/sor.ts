@@ -1,6 +1,5 @@
 import {
     getSpotPrice,
-    getLimitAmountSwap,
     getSpotPricePath,
     getSlippageLinearizedSpotPriceAfterSwapPath,
     getLimitAmountSwapPath,

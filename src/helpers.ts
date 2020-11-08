@@ -19,7 +19,7 @@ import {
     calcInGivenOut,
     scale,
 } from './bmath';
-const disabledTokensDefault = require('./disabled-tokens.json');
+import disabledTokensDefault from './disabled-tokens.json';
 
 export function getLimitAmountSwap(
     poolPairData: PoolPairData,

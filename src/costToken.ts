@@ -26,7 +26,7 @@ export function getAddress(tokenA: string, tokenB: string): string {
 
 export async function getOnChainReserves(
     PairAddr: string,
-    provider: ethers.providers.Web3Provider
+    provider: ethers.providers.BaseProvider
 ): Promise<any[]> {
     const uniswapV2PairAbi = require('./abi/UniswapV2Pair.json');
 
@@ -39,7 +39,7 @@ export async function getOnChainReserves(
 
 export async function getTokenWeiPrice(
     TokenAddr: string,
-    provider: ethers.providers.Web3Provider
+    provider: ethers.providers.BaseProvider
 ): Promise<BigNumber> {
     const WETH = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
     if (TokenAddr.toLowerCase() === WETH.toLowerCase())
@@ -69,7 +69,7 @@ export async function getCostOutputToken(
     TokenAddr: string,
     GasPriceWei: BigNumber,
     SwapGasCost: BigNumber,
-    Provider: ethers.providers.Web3Provider,
+    Provider: ethers.providers.BaseProvider,
     ChainId: number = undefined
 ): Promise<BigNumber> {
     if (!ChainId) {

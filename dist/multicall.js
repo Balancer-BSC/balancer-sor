@@ -63,7 +63,7 @@ function getAllPoolDataOnChain(pools, multiAddress, provider) {
             let pool = pools.pools[i];
             addresses.push([pool.id]);
             total++;
-            pool.tokens.forEach((token, tokenIndex) => {
+            pool.tokens.forEach(token => {
                 addresses[i].push(token.address);
                 total++;
             });

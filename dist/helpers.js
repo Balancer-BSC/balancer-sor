@@ -604,6 +604,7 @@ function sortPoolsMostLiquid(
 }
 exports.sortPoolsMostLiquid = sortPoolsMostLiquid;
 function getMarketSpotPrice(paths) {
+    if (paths.length === 0) return bmath_1.bnum(0);
     // Take the spotPrice of the path that has the lowest slippage.
     let min = bmath_1.bnum(paths[0].slippage);
     let marketSp = bmath_1.bnum(paths[0].spotPrice);

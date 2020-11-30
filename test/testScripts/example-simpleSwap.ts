@@ -8,6 +8,7 @@ const WETH = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
 const DAI = '0x6B175474E89094C44Da98b954EedeAC495271d0F'; // DAI Address
 const USDC = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'; // USDC Address
 const uUSD = '0xD16c79c8A39D44B2F3eB45D2019cd6A42B03E2A9'; // uUSDwETH Synthetic Token
+const AMPL = '0xd46ba6d942050d489dbd938a2c909a5d5039a161';
 
 async function simpleSwap() {
     // If running this example make sure you have a .env file saved in root DIR with INFURA=your_key
@@ -31,10 +32,10 @@ async function simpleSwap() {
 
     const SOR = new sor.SOR(provider, gasPrice, maxNoPools, chainId, poolsUrl);
 
-    const tokenIn = USDC;
-    const tokenOut = WETH;
+    const tokenIn = AMPL;
+    const tokenOut = USDC;
     const swapType = 'swapExactIn'; // Two different swap types are used: swapExactIn & swapExactOut
-    let amountIn = new BigNumber('1000000'); // 1 USDC, Always pay attention to Token Decimals. i.e. In this case USDC has 6 decimals.
+    let amountIn = new BigNumber('1000000000000'); // 1 USDC, Always pay attention to Token Decimals. i.e. In this case USDC has 6 decimals.
 
     console.log(
         `\n************** First Call, Without All Pools - Loading Subset of Pools For Pair`
@@ -93,7 +94,7 @@ async function simpleSwap() {
         tokenIn,
         tokenOut,
         swapType,
-        new BigNumber('2000000')
+        amountIn.times(2)
     );
     console.timeEnd(`getSwapsWithFilteredPoolsExactIn`);
 
@@ -127,7 +128,7 @@ async function simpleSwap() {
         tokenOut,
         tokenIn,
         swapType,
-        new BigNumber(1e18)
+        amountIn
     );
     console.timeEnd(`getSwapsWithFilteredPoolsTokensSwapped`);
 
